@@ -13,7 +13,7 @@ exports[`App.vue renders as expected 1`] = `
     </v-btn-stub>
   </v-app-bar-stub>
   <v-main-stub>
-    <helloworld-stub></helloworld-stub>
+    <home-stub></home-stub>
   </v-main-stub>
 </v-app-stub>
 `;

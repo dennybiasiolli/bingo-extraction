@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home.vue renders as expected 1`] = `
-<div class="home"><img alt="Vue logo" src="../assets/logo.png">
+<div>
   <helloworld-stub msg="Welcome to Your Vue.js App"></helloworld-stub>
 </div>
 `;
