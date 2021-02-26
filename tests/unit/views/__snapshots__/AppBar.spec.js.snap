@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar.vue renders as expected 1`] = `
+<v-app-bar-stub app="" color="primary" dark="">
+  <div class="d-flex align-center">
+    <v-img-stub alt="Vuetify Logo" contain="" src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png" transition="scale-transition" width="40" class="shrink mr-2"></v-img-stub>
+    <h1>Bingo Extraction</h1>
+  </div>
+  <v-spacer-stub></v-spacer-stub>
+  <h4>Version 0.0.1</h4>
+</v-app-bar-stub>
+`;
