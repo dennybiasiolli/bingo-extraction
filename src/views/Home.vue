@@ -1,17 +1,21 @@
 <template>
-  <div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-container fluid>
+    <DisplayNumbers title="Available numbers" :numbers="availableNumbers" />
+  </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import DisplayNumbers from '@/components/DisplayNumbers.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    DisplayNumbers,
+  },
+  data() {
+    return {
+      availableNumbers: [...Array(90).keys()].map((i) => i + 1),
+    };
   },
 };
 </script>
