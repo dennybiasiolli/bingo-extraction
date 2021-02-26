@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DisplayNumbers.vue renders as expected 1`] = `
+<v-card-stub elevation="2">
+  <v-card-title-stub>title text</v-card-title-stub>
+  <v-card-text-stub>
+    <v-chip-stub class="ma-1">1</v-chip-stub>
+    <v-chip-stub class="ma-1">2</v-chip-stub>
+    <v-chip-stub class="ma-1">3</v-chip-stub>
+    <v-chip-stub class="ma-1">4</v-chip-stub>
+    <v-chip-stub class="ma-1">5</v-chip-stub>
+    <v-chip-stub class="ma-1">6</v-chip-stub>
+    <v-chip-stub class="ma-1">7</v-chip-stub>
+    <v-chip-stub class="ma-1">8</v-chip-stub>
+    <v-chip-stub class="ma-1">9</v-chip-stub>
+    <v-chip-stub class="ma-1">10</v-chip-stub>
+  </v-card-text-stub>
+</v-card-stub>
+`;
