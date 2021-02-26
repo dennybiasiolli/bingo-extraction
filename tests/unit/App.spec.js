@@ -4,7 +4,7 @@ import App from '@/App.vue';
 describe('App.vue', () => {
   it('renders as expected', () => {
     const wrapper = shallowMount(App, {
-      stubs: ['v-app', 'v-app-bar', 'v-img', 'v-spacer', 'v-btn', 'v-icon', 'v-main'],
+      stubs: ['v-app', 'v-main'],
     });
     expect(wrapper).toMatchSnapshot();
   });

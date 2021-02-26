@@ -2,16 +2,7 @@
 
 exports[`App.vue renders as expected 1`] = `
 <v-app-stub>
-  <v-app-bar-stub app="" color="primary" dark="">
-    <div class="d-flex align-center">
-      <v-img-stub alt="Vuetify Logo" contain="" src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png" transition="scale-transition" width="40" class="shrink mr-2"></v-img-stub>
-      <v-img-stub alt="Vuetify Name" contain="" min-width="100" src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png" width="100" class="shrink mt-1 hidden-sm-and-down"></v-img-stub>
-    </div>
-    <v-spacer-stub></v-spacer-stub>
-    <v-btn-stub href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text=""><span class="mr-2">Latest Release</span>
-      <v-icon-stub>mdi-open-in-new</v-icon-stub>
-    </v-btn-stub>
-  </v-app-bar-stub>
+  <appbar-stub></appbar-stub>
   <v-main-stub>
     <home-stub></home-stub>
   </v-main-stub>
