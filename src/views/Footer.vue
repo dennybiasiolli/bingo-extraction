@@ -1,9 +1,7 @@
 <template>
   <v-footer>
-    Footer left text
+    [Remaining numbers here]
     <v-spacer />
-    Footer center text
-    <v-spacer />
-    Footer right text
+    [Latests 5 extracted number here]
   </v-footer>
 </template>

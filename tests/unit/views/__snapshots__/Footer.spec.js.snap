@@ -2,10 +2,8 @@
 
 exports[`Footer.vue renders as expected 1`] = `
 <v-footer-stub>
-  Footer left text
+  [Remaining numbers here]
   <v-spacer-stub></v-spacer-stub>
-  Footer center text
-  <v-spacer-stub></v-spacer-stub>
-  Footer right text
+  [Latests 5 extracted number here]
 </v-footer-stub>
 `;
