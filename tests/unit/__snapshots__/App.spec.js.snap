@@ -6,5 +6,6 @@ exports[`App.vue renders as expected 1`] = `
   <v-main-stub>
     <home-stub></home-stub>
   </v-main-stub>
+  <footer-stub></footer-stub>
 </v-app-stub>
 `;

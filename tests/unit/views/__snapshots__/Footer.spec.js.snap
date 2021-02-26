@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer.vue renders as expected 1`] = `
+<v-footer-stub>
+  Footer left text
+  <v-spacer-stub></v-spacer-stub>
+  Footer center text
+  <v-spacer-stub></v-spacer-stub>
+  Footer right text
+</v-footer-stub>
+`;
