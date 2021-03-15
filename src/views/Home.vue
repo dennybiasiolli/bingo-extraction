@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-btn class="my-2" @click="handleExtract">Extract</v-btn>
+    <v-btn class="my-2" @click="extractNumber">Extract</v-btn>
     <v-row>
       <v-col>
         <h1 class="current-number">
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapState, mapGetters, mapMutations } from 'vuex';
 import DisplayNumbers from '@/components/DisplayNumbers.vue';
 
 export default {
@@ -24,23 +25,12 @@ export default {
   components: {
     DisplayNumbers,
   },
-  data() {
-    return {
-      availableNumbers: [...Array(90).keys()].map((i) => i + 1),
-      extractedNumbers: [],
-    };
-  },
   computed: {
-    ascendingExtractedNumbers() {
-      return [...this.extractedNumbers].sort((a, b) => a - b);
-    },
+    ...mapState(['availableNumbers', 'extractedNumbers']),
+    ...mapGetters(['ascendingExtractedNumbers']),
   },
   methods: {
-    handleExtract() {
-      const index = Math.floor(Math.random() * this.availableNumbers.length);
-      const extracted = this.availableNumbers.splice(index, 1);
-      this.extractedNumbers = this.extractedNumbers.concat(extracted);
-    },
+    ...mapMutations(['extractNumber']),
   },
 };
 </script>
