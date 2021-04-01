@@ -1,8 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
+import store from '@/store';
 import Home from '@/views/Home.vue';
 
 describe('Home.vue', () => {
   const shallowMountComponent = () => shallowMount(Home, {
+    store,
     stubs: ['v-container', 'v-btn', 'v-row', 'v-col'],
   });
 
@@ -16,10 +18,10 @@ describe('Home.vue', () => {
       .mockReturnValueOnce(0.123456789)
       .mockReturnValueOnce(0.987654321);
     const wrapper = shallowMountComponent();
-    wrapper.vm.handleExtract();
+    wrapper.vm.extractNumber();
     await wrapper.vm.$nextTick();
     expect(wrapper).toMatchSnapshot();
-    wrapper.vm.handleExtract();
+    wrapper.vm.extractNumber();
     await wrapper.vm.$nextTick();
     expect(wrapper).toMatchSnapshot();
     jest.spyOn(global.Math, 'random').mockRestore();
