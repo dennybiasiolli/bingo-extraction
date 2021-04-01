@@ -1,10 +1,39 @@
-import { shallowMount } from '@vue/test-utils';
-import store from '@/store';
+import { shallowMount, createLocalVue } from '@vue/test-utils';
+import Vuex from 'vuex';
 import Home from '@/views/Home.vue';
 
+const localVue = createLocalVue();
+localVue.use(Vuex);
+
 describe('Home.vue', () => {
+  let state; let getters; let mutations; let store;
+  beforeEach(() => {
+    state = {
+      availableNumbers: [...Array(90).keys()].map((i) => i + 1),
+      extractedNumbers: [],
+    };
+    getters = {
+      ascendingExtractedNumbers: (s) => [...s.extractedNumbers].sort((a, b) => a - b),
+    };
+    mutations = {
+      extractNumber: jest.fn()
+        .mockImplementationOnce(() => {
+          const extracted = state.availableNumbers.splice(11, 1);
+          state.extractedNumbers = state.extractedNumbers.concat(extracted);
+        })
+        .mockImplementationOnce(() => {
+          const extracted = state.availableNumbers.splice(87, 1);
+          state.extractedNumbers = state.extractedNumbers.concat(extracted);
+        }),
+    };
+    store = new Vuex.Store({
+      state, getters, mutations,
+    });
+  });
+
   const shallowMountComponent = () => shallowMount(Home, {
     store,
+    localVue,
     stubs: ['v-container', 'v-btn', 'v-row', 'v-col'],
   });
 
@@ -14,16 +43,13 @@ describe('Home.vue', () => {
   });
 
   it('extracts a number and render as expected', async () => {
-    jest.spyOn(global.Math, 'random')
-      .mockReturnValueOnce(0.123456789)
-      .mockReturnValueOnce(0.987654321);
     const wrapper = shallowMountComponent();
     wrapper.vm.extractNumber();
+    expect(mutations.extractNumber).toHaveBeenCalled();
     await wrapper.vm.$nextTick();
     expect(wrapper).toMatchSnapshot();
     wrapper.vm.extractNumber();
     await wrapper.vm.$nextTick();
     expect(wrapper).toMatchSnapshot();
-    jest.spyOn(global.Math, 'random').mockRestore();
   });
 });
